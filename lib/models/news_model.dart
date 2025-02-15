@@ -20,4 +20,16 @@ class NewsModel {
     required this.publishedAt,
     required this.content,
   });
+
+  factory NewsModel.fromJson(Map<String,dynamic> json ){
+    return NewsModel(
+            source: json["source"] ?? "no sourc",
+            author: json["author"] ?? "no auther",
+            title: json["title"] ?? "no title",
+            description: json["description"] ?? "no desc",
+            url: json["url"] ?? "no url",
+            urlToImage: json["urlToImage"] ?? "no Image",
+            publishedAt: json["publishedAt"] ?? "no date",
+            content: json["content"] ?? "no content");
+  }
 }
